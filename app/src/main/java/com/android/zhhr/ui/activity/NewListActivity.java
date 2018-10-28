@@ -21,7 +21,7 @@ import com.android.zhhr.utils.IntentUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,11 +30,11 @@ import butterknife.OnClick;
 
 public class NewListActivity extends BaseActivity<NewListPresenter> implements INewView<List<Comic>> {
 
-    @Bind(R.id.rv_bookshelf)
+    @BindView(R.id.rv_bookshelf)
     RecyclerView mRecyclerView;
-    @Bind(R.id.ev_scrollview)
+    @BindView(R.id.ev_scrollview)
     ElasticImageScrollView mScrollView;
-    @Bind(R.id.rl_title)
+    @BindView(R.id.rl_title)
     RelativeLayout mTitle;
 
     private NewListAdapter mAdapter;

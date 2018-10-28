@@ -19,7 +19,7 @@ import com.android.zhhr.utils.IntentUtil;
 
 import java.util.HashMap;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -27,19 +27,19 @@ import butterknife.OnClick;
  */
 
 public class SelectDownloadActivity extends BaseActivity<SelectDownloadPresenter> implements ISelectDownloadView {
-    @Bind(R.id.tv_chapters_num)
+    @BindView(R.id.tv_chapters_num)
     TextView mChapterNum;
-    @Bind(R.id.rv_index)
+    @BindView(R.id.rv_index)
     RecyclerView mRecycleView;
-    @Bind(R.id.iv_order)
+    @BindView(R.id.iv_order)
     ImageView mOrder;
 
-    @Bind(R.id.tv_select_all)
+    @BindView(R.id.tv_select_all)
     TextView mSelected;
 
-    @Bind(R.id.iv_select)
+    @BindView(R.id.iv_select)
     ImageView mSelectedIcon;
-    @Bind(R.id.tv_selected)
+    @BindView(R.id.tv_selected)
     TextView mSelectedNum;
 
 

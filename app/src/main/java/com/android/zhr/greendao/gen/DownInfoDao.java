@@ -22,7 +22,7 @@ public class DownInfoDao extends AbstractDao<DownInfo, Long> {
     /**
      * Properties of entity DownInfo.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
         public final static Property Comic_id = new Property(1, long.class, "comic_id", false, "COMIC_ID");
@@ -32,7 +32,7 @@ public class DownInfoDao extends AbstractDao<DownInfo, Long> {
         public final static Property ConnectonTime = new Property(5, int.class, "connectonTime", false, "CONNECTON_TIME");
         public final static Property StateInte = new Property(6, int.class, "stateInte", false, "STATE_INTE");
         public final static Property Url = new Property(7, String.class, "url", false, "URL");
-    };
+    }
 
 
     public DownInfoDao(DaoConfig config) {
@@ -150,6 +150,11 @@ public class DownInfoDao extends AbstractDao<DownInfo, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(DownInfo entity) {
+        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
     }
 
     @Override

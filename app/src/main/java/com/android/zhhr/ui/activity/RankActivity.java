@@ -19,7 +19,7 @@ import com.android.zhhr.utils.IntentUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -27,12 +27,12 @@ import butterknife.OnClick;
  */
 
 public class RankActivity extends BaseActivity<RankPresenter> implements IRankView<List<Comic>>{
-    @Bind(R.id.rv_bookshelf)
+    @BindView(R.id.rv_bookshelf)
     RecyclerView mRecycleView;
     RankAdapter mAdapter;
-    @Bind(R.id.ev_scrollview)
+    @BindView(R.id.ev_scrollview)
     ElasticScrollView mScrollView;
-    @Bind(R.id.ll_actionbar)
+    @BindView(R.id.ll_actionbar)
     CustomTab mTab;
 
 

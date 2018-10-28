@@ -35,7 +35,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
@@ -44,66 +44,66 @@ import jp.wasabeef.glide.transformations.BlurTransformation;
  */
 
 public class ComicDetaiActivity extends BaseActivity<ComicDetailPresenter> implements IDetailView<Comic>,IndexItemView.onItemClickLinstener{
-    @Bind(R.id.iv_image)
+    @BindView(R.id.iv_image)
     ImageView mHeaderView;
-    @Bind(R.id.sv_comic)
+    @BindView(R.id.sv_comic)
     DetailScrollView mScrollView;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitle;
-    @Bind(R.id.ll_text)
+    @BindView(R.id.ll_text)
     LinearLayout mText;
-    @Bind(R.id.iv_image_bg)
+    @BindView(R.id.iv_image_bg)
     ImageView mHeaderViewBg;
-    @Bind(R.id.tv_author_tag)
+    @BindView(R.id.tv_author_tag)
     TextView mAuthorTag;
-    @Bind(R.id.tv_collects)
+    @BindView(R.id.tv_collects)
     TextView mCollects;
-    @Bind(R.id.tv_describe)
+    @BindView(R.id.tv_describe)
     TextView mDescribe;
-    @Bind(R.id.tv_popularity)
+    @BindView(R.id.tv_popularity)
     TextView mPopularity;
-    @Bind(R.id.tv_status)
+    @BindView(R.id.tv_status)
     TextView mStatus;
-    @Bind(R.id.tv_update)
+    @BindView(R.id.tv_update)
     TextView mUpdate;
-    @Bind(R.id.tv_point)
+    @BindView(R.id.tv_point)
     TextView mPoint;
-    @Bind(R.id.ll_detail)
+    @BindView(R.id.ll_detail)
     RelativeLayout mDetail;
-    @Bind(R.id.tv_tab)
+    @BindView(R.id.tv_tab)
     TextView mTab;
-    @Bind(R.id.iv_order)
+    @BindView(R.id.iv_order)
     ImageView mOrder;
-    @Bind(R.id.tv_actionbar_title)
+    @BindView(R.id.tv_actionbar_title)
     TextView mActionBarTitle;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mBack;
-    @Bind(R.id.iv_oreder2)
+    @BindView(R.id.iv_oreder2)
     ImageView mOrder2;
-    @Bind(R.id.btn_read)
+    @BindView(R.id.btn_read)
     Button mRead;
 
-    @Bind(R.id.iv_loading)
+    @BindView(R.id.iv_loading)
     ImageView mLoading;
-    @Bind(R.id.rl_loading)
+    @BindView(R.id.rl_loading)
     RelativeLayout mRLloading;
-    @Bind(R.id.tv_loading)
+    @BindView(R.id.tv_loading)
     TextView mLoadingText;
-    @Bind(R.id.iv_error)
+    @BindView(R.id.iv_error)
     ImageView mReload;
-    @Bind(R.id.tv_loading_title)
+    @BindView(R.id.tv_loading_title)
     TextView mLoadingTitle;
-    @Bind(R.id.ll_index)
+    @BindView(R.id.ll_index)
     LinearLayout mIndex;
-    @Bind(R.id.iv_collect)
+    @BindView(R.id.iv_collect)
     ImageView mCollect;
-    @Bind(R.id.tv_collect)
+    @BindView(R.id.tv_collect)
     TextView mIsCollect;
-    @Bind(R.id.ll_floatbottom)
+    @BindView(R.id.ll_floatbottom)
     DetailFloatLinearLayout mFloatButtom;
 
     //add start by ad
-    @Bind(R.id.layout1_banner)
+    @BindView(R.id.layout1_banner)
     LinearLayout mAdBanner;
 
     //ZAdComponent banner;

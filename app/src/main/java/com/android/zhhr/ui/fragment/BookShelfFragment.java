@@ -33,7 +33,7 @@ import com.android.zhhr.utils.DisplayUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -41,25 +41,25 @@ import butterknife.OnClick;
  */
 
 public class BookShelfFragment extends BaseFragment<BookShelfPresenter> implements IBookShelfView {
-    @Bind(R.id.vp_bookshelf)
+    @BindView(R.id.vp_bookshelf)
     ViewPager mViewpager;
 
     BookShelfFragmentAdapter mAdapter;
     protected FragmentManager fragmentManager;
     protected List<BaseBookShelfFragment> fragments;
-    @Bind(R.id.tv_download)
+    @BindView(R.id.tv_download)
     TextView mDownload;
-    @Bind(R.id.tv_history)
+    @BindView(R.id.tv_history)
     TextView mHistory;
-    @Bind(R.id.tv_collect)
+    @BindView(R.id.tv_collect)
     TextView mCollect;
-    @Bind(R.id.iv_bottom_collect)
+    @BindView(R.id.iv_bottom_collect)
     ImageView mBottomCollect;
-    @Bind(R.id.iv_bottom_history)
+    @BindView(R.id.iv_bottom_history)
     ImageView mBottomHistory;
-    @Bind(R.id.iv_bottom_download)
+    @BindView(R.id.iv_bottom_download)
     ImageView mBottomDownload;
-    @Bind(R.id.iv_edit)
+    @BindView(R.id.iv_edit)
     ImageView mEdit;
 
     private boolean isEditing;

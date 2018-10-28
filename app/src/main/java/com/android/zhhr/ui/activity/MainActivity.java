@@ -19,7 +19,7 @@ import com.pgyersdk.update.UpdateManagerListener;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -27,15 +27,15 @@ import butterknife.OnClick;
  */
 
 public class MainActivity extends BaseFragmentActivity {
-    @Bind(R.id.btn_home)
+    @BindView(R.id.btn_home)
     Button mHome;
-    @Bind(R.id.btn_bookshelf)
+    @BindView(R.id.btn_bookshelf)
     Button mBookShelf;
-    @Bind(R.id.btn_mine)
+    @BindView(R.id.btn_mine)
     Button mMine;
-    @Bind(R.id.rl_edit_bottom)
+    @BindView(R.id.rl_edit_bottom)
     FloatEditLayout mEditBottom;
-    @Bind(R.id.rl_switch_night)
+    @BindView(R.id.rl_switch_night)
     SwitchNightRelativeLayout mSwitchNight;
 
     BookShelfFragment bookShelfFragment;

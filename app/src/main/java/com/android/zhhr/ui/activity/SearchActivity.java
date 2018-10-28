@@ -34,7 +34,7 @@ import com.android.zhhr.utils.TextUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -42,22 +42,22 @@ import butterknife.OnClick;
  */
 
 public class SearchActivity extends BaseActivity<SearchPresenter> implements ISearchView<List<Comic>>{
-    @Bind(R.id.et_search)
+    @BindView(R.id.et_search)
     EditText mSearchText;
-    @Bind(R.id.iv_dynamic_recycle)
+    @BindView(R.id.iv_dynamic_recycle)
     RecyclerView mDynamicRecycle;
-    @Bind(R.id.iv_clear)
+    @BindView(R.id.iv_clear)
     ImageView mClearText;
 
-    @Bind(R.id.iv_result_recycle)
+    @BindView(R.id.iv_result_recycle)
     RecyclerView mResultRecycle;
-    @Bind(R.id.iv_top_search_recycle)
+    @BindView(R.id.iv_top_search_recycle)
     RecyclerView mTopRecycle;
-    @Bind(R.id.iv_history_recycle)
+    @BindView(R.id.iv_history_recycle)
     RecyclerView mHistoryRecycle;
-    @Bind(R.id.rl_normal)
+    @BindView(R.id.rl_normal)
     RelativeLayout mNormal;
-    @Bind(R.id.tv_error)
+    @BindView(R.id.tv_error)
     TextView mError;
 
     SearchDynamicAdapter mDynaicAdapter;

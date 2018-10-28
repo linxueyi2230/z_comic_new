@@ -17,7 +17,7 @@ import com.android.zhhr.utils.IntentUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -27,15 +27,15 @@ import butterknife.OnClick;
 public class IndexActivity extends BaseActivity<IndexPresenter> implements IIndexView,BaseRecyclerAdapter.OnItemClickListener{
     private List<String> comic_chapter_titles;
     private IndexAdapter mAdapter;
-    @Bind(R.id.rv_index)
+    @BindView(R.id.rv_index)
     RecyclerView mRecycleView;
-    @Bind(R.id.iv_order)
+    @BindView(R.id.iv_order)
     ImageView mOrder;
-    @Bind(R.id.tv_loading_title)
+    @BindView(R.id.tv_loading_title)
     TextView mTitle;
-    @Bind(R.id.tv_downloaded)
+    @BindView(R.id.tv_downloaded)
     TextView mDownload;
-    @Bind(R.id.tv_chapters_num)
+    @BindView(R.id.tv_chapters_num)
     TextView mChapterNum;
 
     @Override

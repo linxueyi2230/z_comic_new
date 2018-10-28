@@ -21,18 +21,18 @@ public class DaoMaster extends AbstractDaoMaster {
 
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
-        ComicDao.createTable(db, ifNotExists);
-        DBSearchResultDao.createTable(db, ifNotExists);
         DownInfoDao.createTable(db, ifNotExists);
+        DBSearchResultDao.createTable(db, ifNotExists);
         DBChaptersDao.createTable(db, ifNotExists);
+        ComicDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
-        ComicDao.dropTable(db, ifExists);
-        DBSearchResultDao.dropTable(db, ifExists);
         DownInfoDao.dropTable(db, ifExists);
+        DBSearchResultDao.dropTable(db, ifExists);
         DBChaptersDao.dropTable(db, ifExists);
+        ComicDao.dropTable(db, ifExists);
     }
 
     /**
@@ -51,10 +51,10 @@ public class DaoMaster extends AbstractDaoMaster {
 
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
-        registerDaoClass(ComicDao.class);
-        registerDaoClass(DBSearchResultDao.class);
         registerDaoClass(DownInfoDao.class);
+        registerDaoClass(DBSearchResultDao.class);
         registerDaoClass(DBChaptersDao.class);
+        registerDaoClass(ComicDao.class);
     }
 
     public DaoSession newSession() {

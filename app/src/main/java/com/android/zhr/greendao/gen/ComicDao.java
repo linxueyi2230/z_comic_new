@@ -25,7 +25,7 @@ public class ComicDao extends AbstractDao<Comic, Long> {
     /**
      * Properties of entity Comic.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, long.class, "id", true, "_id");
         public final static Property Title = new Property(1, String.class, "title", false, "TITLE");
@@ -53,7 +53,7 @@ public class ComicDao extends AbstractDao<Comic, Long> {
         public final static Property Download_num = new Property(23, int.class, "download_num", false, "DOWNLOAD_NUM");
         public final static Property Download_num_finish = new Property(24, int.class, "download_num_finish", false, "DOWNLOAD_NUM_FINISH");
         public final static Property From = new Property(25, int.class, "from", false, "FROM");
-    };
+    }
 
     private final StringConverter chaptersConverter = new StringConverter();
     private final StringConverter chapters_urlConverter = new StringConverter();
@@ -352,6 +352,11 @@ public class ComicDao extends AbstractDao<Comic, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(Comic entity) {
+        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
     }
 
     @Override

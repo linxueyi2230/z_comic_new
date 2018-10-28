@@ -22,12 +22,12 @@ public class DBSearchResultDao extends AbstractDao<DBSearchResult, Long> {
     /**
      * Properties of entity DBSearchResult.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Title = new Property(1, String.class, "title", false, "TITLE");
-        public final static Property Search_time = new Property(2, long.class, "search_time", false, "SEARCH_TIME");
-    };
+        public final static Property Search_time = new Property(2, Long.class, "search_time", false, "SEARCH_TIME");
+    }
 
 
     public DBSearchResultDao(DaoConfig config) {
@@ -112,6 +112,11 @@ public class DBSearchResultDao extends AbstractDao<DBSearchResult, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(DBSearchResult entity) {
+        return entity.getId() != null;
     }
 
     @Override

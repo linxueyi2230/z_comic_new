@@ -22,7 +22,7 @@ import com.android.zhhr.utils.IntentUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -30,9 +30,9 @@ import butterknife.OnClick;
  */
 
 public class MineFragment  extends BaseFragment<MinePresenter> implements IMineView<List<MineTitle>> {
-    @Bind(R.id.rv_mine)
+    @BindView(R.id.rv_mine)
     RecyclerView mRecycle;
-    @Bind(R.id.iv_cover)
+    @BindView(R.id.iv_cover)
     ImageView mCover;
 
     private MineAdapter mineAdapter;

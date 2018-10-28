@@ -31,7 +31,7 @@ import com.youth.banner.listener.OnBannerListener;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -40,31 +40,31 @@ import butterknife.OnClick;
 
 public class HomeFragment extends BaseFragment<HomePresenter> implements IHomeView<Comic>,MainAdapter.OnItemClickListener {
 
-    @Bind(R.id.recycle_view)
+    @BindView(R.id.recycle_view)
     RecyclerView mRecycleView;
 
-    @Bind(R.id.sv_comic)
+    @BindView(R.id.sv_comic)
     ZElasticRefreshScrollView mScrollView;
-    @Bind(R.id.rl_error_view)
+    @BindView(R.id.rl_error_view)
     RelativeLayout mErrorView;
-    @Bind(R.id.iv_error)
+    @BindView(R.id.iv_error)
     ImageView mReload;
-    @Bind(R.id.B_banner)
+    @BindView(R.id.B_banner)
     Banner mBanner;
     private MainAdapter mAdapter;
-    @Bind(R.id.rl_actionbar)
+    @BindView(R.id.rl_actionbar)
     RelativeLayout mActionBar;
-    @Bind(R.id.v_actionbar_bg)
+    @BindView(R.id.v_actionbar_bg)
     View mActionBarBg;
-    @Bind(R.id.tv_recent)
+    @BindView(R.id.tv_recent)
     TextView mTvRecent;
-    @Bind(R.id.rl_recent)
+    @BindView(R.id.rl_recent)
     RelativeLayout mRlRecent;
-    @Bind(R.id.tv_hometitle1)
+    @BindView(R.id.tv_hometitle1)
     TextView mHomeTitle1;
-    @Bind(R.id.tv_hometitle2)
+    @BindView(R.id.tv_hometitle2)
     TextView mHomeTitle2;
-    @Bind(R.id.iv_search)
+    @BindView(R.id.iv_search)
     ImageView mSearch;
 
     MainActivity activity;

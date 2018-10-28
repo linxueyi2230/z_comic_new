@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.android.zhhr.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,9 +22,9 @@ import butterknife.OnClick;
 public class CustomDialog extends AlertDialog {
     private onClickListener listener;
 
-    @Bind(R.id.tv_content)
+    @BindView(R.id.tv_content)
     TextView mContent;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitle;
     String title;
     String content;

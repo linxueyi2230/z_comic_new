@@ -34,7 +34,7 @@ import com.android.zhhr.utils.IntentUtil;
 import com.android.zhhr.utils.LogUtil;
 import com.xw.repo.BubbleSeekBar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -43,51 +43,51 @@ import butterknife.OnClick;
 
 public class ComicChapterActivity extends BaseActivity<ComicChapterPresenter> implements IChapterView<PreloadChapters>{
 
-    @Bind(R.id.vp_chapters)
+    @BindView(R.id.vp_chapters)
     ComicReaderViewpager mViewpager;
-    @Bind(R.id.rl_top)
+    @BindView(R.id.rl_top)
     RelativeLayout mTop;
-    @Bind(R.id.rl_bottom)
+    @BindView(R.id.rl_bottom)
     RelativeLayout mBottom;
-    @Bind(R.id.rl_menu)
+    @BindView(R.id.rl_menu)
     ReaderMenuLayout menuLayout;
-    @Bind(R.id.iv_back)
+    @BindView(R.id.iv_back)
     ImageView mBack;
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitle;
-    @Bind(R.id.sb_seekbar)
+    @BindView(R.id.sb_seekbar)
     ZBubbleSeekBar mSeekbar;
 
     ChapterViewpagerAdapter mAdapter;
 
-    @Bind(R.id.iv_loading)
+    @BindView(R.id.iv_loading)
     ImageView mLoading;
-    @Bind(R.id.rl_loading)
+    @BindView(R.id.rl_loading)
     RelativeLayout mRLloading;
-    @Bind(R.id.tv_loading)
+    @BindView(R.id.tv_loading)
     TextView mLoadingText;
-    @Bind(R.id.iv_error)
+    @BindView(R.id.iv_error)
     ImageView mReload;
-    @Bind(R.id.tv_loading_title)
+    @BindView(R.id.tv_loading_title)
     TextView mLoadingTitle;
-    @Bind(R.id.rl_switch_model)
+    @BindView(R.id.rl_switch_model)
     SwitchRelativeLayout mSwitchModel;
-    @Bind(R.id.iv_normal_model)
+    @BindView(R.id.iv_normal_model)
     Button mNormal;
-    @Bind(R.id.iv_j_comic_model)
+    @BindView(R.id.iv_j_comic_model)
     Button mJcomic;
-    @Bind(R.id.iv_down_model)
+    @BindView(R.id.iv_down_model)
     Button mDown;
 
-    @Bind(R.id.rl_switch_night)
+    @BindView(R.id.rl_switch_night)
     SwitchNightRelativeLayout mSwitchNight;
 
-    @Bind(R.id.rl_index)
+    @BindView(R.id.rl_index)
     IndexLayout mIndex;
 
 
 
-    @Bind(R.id.rv_chapters)
+    @BindView(R.id.rv_chapters)
     ZoomRecyclerView mRecycleView;
 
     private ChapterRecycleAdapter mVerticalAdapter;

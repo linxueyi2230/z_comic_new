@@ -24,7 +24,7 @@ import com.android.zhhr.utils.IntentUtil;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -32,26 +32,26 @@ import butterknife.OnClick;
  */
 
 public class DownloadChapterlistActivity extends BaseActivity<DownloadChapterlistPresenter> implements IDownloadlistView<List<DBChapters>>{
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitle;
-    @Bind(R.id.rv_downloadlist)
+    @BindView(R.id.rv_downloadlist)
     RecyclerView mRecyclerview;
-    @Bind(R.id.rl_loading)
+    @BindView(R.id.rl_loading)
     RelativeLayout mRLloading;
-    @Bind(R.id.tv_loading)
+    @BindView(R.id.tv_loading)
     TextView mLoadingText;
-    @Bind(R.id.iv_error)
+    @BindView(R.id.iv_error)
     ImageView mReload;
-    @Bind(R.id.iv_loading)
+    @BindView(R.id.iv_loading)
     ImageView mLoading;
-    @Bind(R.id.tv_download)
+    @BindView(R.id.tv_download)
     TextView mDownloadText;
-    @Bind(R.id.iv_download)
+    @BindView(R.id.iv_download)
     ImageView mDownloadImage;
 
-    @Bind(R.id.iv_edit)
+    @BindView(R.id.iv_edit)
     ImageView mEdit;
-    @Bind(R.id.rl_edit_bottom)
+    @BindView(R.id.rl_edit_bottom)
     FloatEditLayout mEditLayout;
 
 

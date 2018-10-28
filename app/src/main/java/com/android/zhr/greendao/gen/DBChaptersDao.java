@@ -25,7 +25,7 @@ public class DBChaptersDao extends AbstractDao<DBChapters, Long> {
     /**
      * Properties of entity DBChapters.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Comic_id = new Property(1, Long.class, "comic_id", false, "COMIC_ID");
@@ -39,7 +39,7 @@ public class DBChaptersDao extends AbstractDao<DBChapters, Long> {
         public final static Property StateInte = new Property(9, int.class, "stateInte", false, "STATE_INTE");
         public final static Property Comiclist = new Property(10, String.class, "comiclist", false, "COMICLIST");
         public final static Property Chapters_path = new Property(11, String.class, "chapters_path", false, "CHAPTERS_PATH");
-    };
+    }
 
     private final StringConverter comiclistConverter = new StringConverter();
     private final StringConverter chapters_pathConverter = new StringConverter();
@@ -227,6 +227,11 @@ public class DBChaptersDao extends AbstractDao<DBChapters, Long> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(DBChapters entity) {
+        return entity.getId() != null;
     }
 
     @Override

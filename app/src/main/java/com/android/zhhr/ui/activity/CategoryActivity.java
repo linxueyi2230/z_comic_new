@@ -24,7 +24,7 @@ import com.android.zhhr.utils.IntentUtil;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -32,16 +32,16 @@ import butterknife.OnClick;
  */
 
 public class CategoryActivity extends BaseActivity<CategoryPresenter> implements ICategoryView<List<Comic>>{
-    @Bind(R.id.rv_select)
+    @BindView(R.id.rv_select)
     RecyclerView mSelectRecyclerView;
 
-    @Bind(R.id.rv_bookshelf)
+    @BindView(R.id.rv_bookshelf)
     RecyclerView mSelectListRecyclerView;
-    @Bind(R.id.ev_scrollview)
+    @BindView(R.id.ev_scrollview)
     ElasticHeadScrollView mScrollView;
-    @Bind(R.id.tv_actionbar_category)
+    @BindView(R.id.tv_actionbar_category)
     TextView mCategoryText;
-    @Bind(R.id.rl_actionbar_category)
+    @BindView(R.id.rl_actionbar_category)
     RelativeLayout mCategoryRelativeLayout;
 
     CategoryAdapter mSelectAdapter;

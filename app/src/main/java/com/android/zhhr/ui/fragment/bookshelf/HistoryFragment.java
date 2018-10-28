@@ -25,20 +25,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by 皓然 on 2017/8/7.
  */
 
 public class HistoryFragment extends BaseBookShelfFragment<HistoryPresenter> implements ICollectionView<List<Comic>>,BaseRecyclerAdapter.OnItemClickListener {
-    @Bind(R.id.rv_bookshelf)
+    @BindView(R.id.rv_bookshelf)
     RecyclerView mRecycleView;
     private HistoryAdapter mAdapter;
-    @Bind(R.id.ev_scrollview)
+    @BindView(R.id.ev_scrollview)
     ElasticScrollView mScrollView;
 
-    @Bind(R.id.rl_empty_view)
+    @BindView(R.id.rl_empty_view)
     RelativeLayout mEmptyView;
 
 

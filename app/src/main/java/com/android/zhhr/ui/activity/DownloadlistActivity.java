@@ -21,7 +21,7 @@ import com.android.zhhr.ui.view.IDownloadlistView;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -29,9 +29,9 @@ import butterknife.OnClick;
  */
 
 public class DownloadlistActivity extends BaseActivity<DownloadlistPresenter> implements IDownloadlistView<List<DownInfo>>{
-    @Bind(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView mTitle;
-    @Bind(R.id.rv_downloadlist)
+    @BindView(R.id.rv_downloadlist)
     RecyclerView mRecyclerview;
 
     private DownloadlistAdapter mAdapter;

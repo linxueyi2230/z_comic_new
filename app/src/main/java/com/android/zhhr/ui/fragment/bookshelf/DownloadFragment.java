@@ -19,17 +19,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by 皓然 on 2017/8/7.
  */
 
 public class DownloadFragment extends BaseBookShelfFragment<DownloadPresenter> implements ICollectionView<List<Comic>>,BaseRecyclerAdapter.OnItemClickListener {
-    @Bind(R.id.rv_bookshelf)
+    @BindView(R.id.rv_bookshelf)
     RecyclerView mRecycleView;
 
-    @Bind(R.id.rl_empty_view)
+    @BindView(R.id.rl_empty_view)
     RelativeLayout mEmptyView;
 
     private DownloadAdapter mAdapter;

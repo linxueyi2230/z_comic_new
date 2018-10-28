@@ -1,7 +1,6 @@
 package com.android.zhhr.ui.custom;
 
 import android.content.Context;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -9,11 +8,8 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.RelativeLayout;
 
-import com.android.zhhr.R;
 import com.android.zhhr.utils.DisplayUtil;
-import com.xw.repo.BubbleSeekBar;
 
-import butterknife.Bind;
 
 /**
  * Created by 皓然 on 2017/7/22.
