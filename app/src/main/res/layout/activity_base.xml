@@ -2,43 +2,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <RelativeLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <fragment
                 android:id="@+id/fm_home"
                 android:name="com.android.zhhr.ui.fragment.HomeFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
+
             <fragment
-                android:name="com.android.zhhr.ui.fragment.BookShelfFragment"
                 android:id="@+id/fm_bookshelf"
+                android:name="com.android.zhhr.ui.fragment.BookShelfFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
+
             <fragment
-                android:name="com.android.zhhr.ui.fragment.MineFragment"
                 android:id="@+id/fm_mine"
+                android:name="com.android.zhhr.ui.fragment.MineFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorBg"
             android:id="@+id/rl_bottombar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            >
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorBg"
+            android:clickable="true">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -46,12 +51,13 @@
 
                     <Button
                         android:id="@+id/btn_home"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
-                        style="?android:attr/borderlessButtonStyle"
                         android:background="@drawable/homepage" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -59,12 +65,13 @@
 
                     <Button
                         android:id="@+id/btn_bookshelf"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
-                        style="?android:attr/borderlessButtonStyle"
                         android:background="@drawable/bookshelf" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -72,28 +79,32 @@
 
                     <Button
                         android:id="@+id/btn_mine"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerInParent="true"
-                        style="?android:attr/borderlessButtonStyle"
                         android:background="@drawable/mine" />
                 </RelativeLayout>
 
             </LinearLayout>
+
             <View
-                android:background="@color/colorBottom"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
+                android:layout_height="0.5dp"
+                android:background="@color/colorBottom" />
 
         </RelativeLayout>
-        <include layout="@layout/layout_edit"></include>
+
+        <include layout="@layout/layout_edit" />
     </RelativeLayout>
-   <include layout="@layout/layout_night_cover"></include>
+
+    <include layout="@layout/layout_night_cover" />
+
     <com.android.zhhr.ui.custom.SwitchNightRelativeLayout
         android:id="@+id/rl_switch_night"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
     </com.android.zhhr.ui.custom.SwitchNightRelativeLayout>
 </RelativeLayout>

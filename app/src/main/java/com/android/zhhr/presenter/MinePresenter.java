@@ -28,11 +28,12 @@ import skin.support.SkinCompatManager;
  * Created by zhhr on 2018/3/13.
  */
 
-public class MinePresenter extends BasePresenter<IMineView>{
+public class MinePresenter extends BasePresenter<IMineView> {
     private List<MineTitle> mLists;
     private ComicModule mModel;
     private String size;
     private boolean isNight;
+
     public MinePresenter(Activity context, IMineView view) {
         super(context, view);
         mLists = new ArrayList<>();
@@ -46,35 +47,40 @@ public class MinePresenter extends BasePresenter<IMineView>{
         mTitle.setTitle("夜间模式");
         mTitle.setResID(R.mipmap.icon_night);
         mLists.add(mTitle);
+
         mTitle = new MineTitle();
         mTitle.setResID(R.mipmap.icon_cache);
         mTitle.setTitle("清除缓存");
         mTitle.setSize(size);
         mLists.add(mTitle);
+
         mTitle = new MineTitle();
         mTitle.setResID(R.mipmap.icon_feedback);
         mTitle.setTitle("问题反馈");
         mLists.add(mTitle);
+
         mTitle = new MineTitle();
         mTitle.setResID(R.mipmap.icon_author);
         mTitle.setTitle("关于作者");
         mLists.add(mTitle);
+
         mTitle = new MineTitle();
         mTitle.setResID(R.mipmap.icon_author);
         mTitle.setTitle("检查自动更新");
         mLists.add(mTitle);
+
         mView.fillData(mLists);
         mView.getDataFinish();
-        try{
+        try {
             isNight = Hawk.get(Constants.MODEL);
-        }catch (Exception e){
+        } catch (Exception e) {
             isNight = false;
         }
         mView.SwitchSkin(isNight);
     }
 
     public void onItemClick(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 switchSkin();
                 break;
@@ -83,16 +89,16 @@ public class MinePresenter extends BasePresenter<IMineView>{
                 break;
             case 2:
                 try {
-                    IntentUtil.toQQchat(mContext,"530414168");
-                    mView.ShowToast( "已为您跳转到作者QQ");
+                    IntentUtil.toQQchat(mContext, "530414168");
+                    mView.ShowToast("已为您跳转到作者QQ");
                 } catch (Exception e) {
                     e.printStackTrace();
-                    mView.ShowToast( "请检查是否安装QQ");
+                    mView.ShowToast("请检查是否安装QQ");
                 }
                 break;
             case 3:
-                mView.ShowToast( "已为您跳转到作者博客");
-                IntentUtil.toUrl(mContext,"http://blog.csdn.net/zhhr1122");
+                mView.ShowToast("已为您跳转到作者博客");
+                IntentUtil.toUrl(mContext, "http://blog.csdn.net/zhhr1122");
                 break;
             case 4:
                 CheckVersion();
@@ -113,7 +119,7 @@ public class MinePresenter extends BasePresenter<IMineView>{
             @Override
             public void onUpdateAvailable(String result) {
                 final AppBean appBean = getAppBeanFromString(result);
-                final CustomDialog dialog = new CustomDialog(mContext,"自动更新","发现新版本:v"+appBean.getVersionName()+",是否更新?");
+                final CustomDialog dialog = new CustomDialog(mContext, "自动更新", "发现新版本:v" + appBean.getVersionName() + ",是否更新?");
                 dialog.setListener(new CustomDialog.onClickListener() {
                     @Override
                     public void OnClickConfirm() {
@@ -137,21 +143,21 @@ public class MinePresenter extends BasePresenter<IMineView>{
      * 更换皮肤
      */
     private void switchSkin() {
-        if(isNight){
-            ((MainActivity)mContext).setSwitchNightVisible(View.GONE,isNight);
+        if (isNight) {
+            ((MainActivity) mContext).setSwitchNightVisible(View.GONE, isNight);
             SkinCompatManager.getInstance().restoreDefaultTheme();
-            Hawk.put(Constants.MODEL,Constants.DEFAULT_MODEL);
+            Hawk.put(Constants.MODEL, Constants.DEFAULT_MODEL);
             mView.SwitchSkin(!isNight);
-        }else{
+        } else {
             SkinCompatManager.getInstance().loadSkin("night", new SkinCompatManager.SkinLoaderListener() {
                 @Override
                 public void onStart() {
-                    ((MainActivity)mContext).setSwitchNightVisible(View.GONE,isNight);
+                    ((MainActivity) mContext).setSwitchNightVisible(View.GONE, isNight);
                 }
 
                 @Override
                 public void onSuccess() {
-                    Hawk.put(Constants.MODEL,Constants.NIGHT_MODEL);
+                    Hawk.put(Constants.MODEL, Constants.NIGHT_MODEL);
                     mView.SwitchSkin(isNight);
                 }
 
@@ -159,7 +165,7 @@ public class MinePresenter extends BasePresenter<IMineView>{
                 public void onFailed(String errMsg) {
                     mView.ShowToast("更换失败");
                 }
-            },SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN); // load by suffix
+            }, SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN); // load by suffix
         }
         isNight = !isNight;
     }
@@ -168,7 +174,7 @@ public class MinePresenter extends BasePresenter<IMineView>{
      * 清除缓存
      */
     private void clearCache() {
-        final CustomDialog customDialog = new CustomDialog(mContext,"提示","确认清除漫画所有缓存？(默认"+Constants.CACHE_DAYS+"天清除一次)");
+        final CustomDialog customDialog = new CustomDialog(mContext, "提示", "确认清除漫画所有缓存？(默认" + Constants.CACHE_DAYS + "天清除一次)");
         customDialog.setListener(new CustomDialog.onClickListener() {
             @Override
             public void OnClickConfirm() {
@@ -183,8 +189,8 @@ public class MinePresenter extends BasePresenter<IMineView>{
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        mView.ShowToast("清除失败"+e.toString());
-                        if (customDialog.isShowing()){
+                        mView.ShowToast("清除失败" + e.toString());
+                        if (customDialog.isShowing()) {
                             customDialog.dismiss();
                         }
                     }
@@ -192,7 +198,7 @@ public class MinePresenter extends BasePresenter<IMineView>{
                     @Override
                     public void onComplete() {
                         mView.ShowToast("清除成功");
-                        if (customDialog.isShowing()){
+                        if (customDialog.isShowing()) {
                             customDialog.dismiss();
                         }
                     }
@@ -201,7 +207,7 @@ public class MinePresenter extends BasePresenter<IMineView>{
 
             @Override
             public void OnClickCancel() {
-                if (customDialog.isShowing()){
+                if (customDialog.isShowing()) {
                     customDialog.dismiss();
                 }
             }

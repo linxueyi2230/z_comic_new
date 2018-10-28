@@ -87,6 +87,7 @@ public class MineFragment  extends BaseFragment<MinePresenter> implements IMineV
     public void getDataFinish() {
         mineAdapter.notifyDataSetChanged();
     }
+
     @OnClick(R.id.rl_information)
     public void toGithub(){
         IntentUtil.toUrl(getActivity(),"https://github.com/zhhr1122/z_comic_new");

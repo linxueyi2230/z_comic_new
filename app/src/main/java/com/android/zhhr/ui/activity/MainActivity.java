@@ -41,8 +41,6 @@ public class MainActivity extends BaseFragmentActivity {
     BookShelfFragment bookShelfFragment;
 
 
-
-
     public FloatEditLayout getmEditBottom() {
         return mEditBottom;
     }
@@ -52,10 +50,10 @@ public class MainActivity extends BaseFragmentActivity {
         mHome.setBackgroundResource(R.drawable.homepage_press);
         fragments = new ArrayList<>();
         fragmentManager = getSupportFragmentManager();
-        bookShelfFragment= (BookShelfFragment) fragmentManager.findFragmentById(R.id.fm_bookshelf);
-        fragments.add (fragmentManager.findFragmentById(R.id.fm_home));
-        fragments.add (bookShelfFragment);
-        fragments.add (fragmentManager.findFragmentById(R.id.fm_mine));
+        bookShelfFragment = (BookShelfFragment) fragmentManager.findFragmentById(R.id.fm_bookshelf);
+        fragments.add(fragmentManager.findFragmentById(R.id.fm_home));
+        fragments.add(bookShelfFragment);
+        fragments.add(fragmentManager.findFragmentById(R.id.fm_mine));
         mEditBottom.setListener(new FloatEditLayout.onClickListener() {
             @Override
             public void OnClickSelect() {
@@ -69,7 +67,7 @@ public class MainActivity extends BaseFragmentActivity {
         });
         selectTab(0);
 
-       CheckVersion();
+        //CheckVersion();
 
     }
 
@@ -87,7 +85,7 @@ public class MainActivity extends BaseFragmentActivity {
             public void onUpdateAvailable(String result) {
                 final AppBean appBean = getAppBeanFromString(result);
                 LogUtil.d(appBean.toString());
-                final CustomDialog dialog = new CustomDialog(MainActivity.this,"自动更新","发现新版本:v"+appBean.getVersionName()+",是否更新?");
+                final CustomDialog dialog = new CustomDialog(MainActivity.this, "自动更新", "发现新版本:v" + appBean.getVersionName() + ",是否更新?");
                 dialog.setListener(new CustomDialog.onClickListener() {
                     @Override
                     public void OnClickConfirm() {
@@ -107,7 +105,7 @@ public class MainActivity extends BaseFragmentActivity {
         });
     }
 
-    public void quitEdit(){
+    public void quitEdit() {
         setEditBottomVisible(View.GONE);
         bookShelfFragment.quitEdit();
     }
@@ -120,7 +118,7 @@ public class MainActivity extends BaseFragmentActivity {
 
 
     @OnClick(R.id.btn_home)
-    public void toHomeFragment(View view){
+    public void toHomeFragment(View view) {
         selectTab(0);
         resetBottomBtn();
         mHome.setBackgroundResource(R.drawable.homepage_press);
@@ -130,7 +128,7 @@ public class MainActivity extends BaseFragmentActivity {
     }
 
     @OnClick(R.id.btn_bookshelf)
-    public void toBookShelfFragment(View view){
+    public void toBookShelfFragment(View view) {
         selectTab(1);
         resetBottomBtn();
         mBookShelf.setBackgroundResource(R.drawable.bookshelf_press);
@@ -140,7 +138,7 @@ public class MainActivity extends BaseFragmentActivity {
     }
 
     @OnClick(R.id.btn_mine)
-    public void toMineFragment(View view){
+    public void toMineFragment(View view) {
         selectTab(2);
         resetBottomBtn();
         mMine.setBackgroundResource(R.drawable.mine_press);
@@ -149,30 +147,30 @@ public class MainActivity extends BaseFragmentActivity {
         }
     }
 
-    public void resetBottomBtn(){
+    public void resetBottomBtn() {
         mHome.setBackgroundResource(R.drawable.homepage);
         mMine.setBackgroundResource(R.drawable.mine);
         mBookShelf.setBackgroundResource(R.drawable.bookshelf);
     }
 
-    public void setEditBottomVisible(int Visible){
+    public void setEditBottomVisible(int Visible) {
         mEditBottom.setVisibility(Visible);
     }
 
-    public void setSwitchNightVisible(int Visible,boolean isNight){
-        mSwitchNight.setVisibility(Visible,isNight);
+    public void setSwitchNightVisible(int Visible, boolean isNight) {
+        mSwitchNight.setVisibility(Visible, isNight);
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if((keyCode == KeyEvent.KEYCODE_BACK)){
-            if(ZToast.isShow()){
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            if (ZToast.isShow()) {
                 return super.onKeyDown(keyCode, event);
-            }else{
-                ZToast.makeText(MainActivity.this,"再按一次返回键退出",1000).show();
+            } else {
+                ZToast.makeText(MainActivity.this, "再按一次返回键退出", 1000).show();
                 return false;
             }
-        }else{
+        } else {
             return super.onKeyDown(keyCode, event);
         }
     }
